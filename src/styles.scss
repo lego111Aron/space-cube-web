@@ -1,31 +1,78 @@
-/* Global styles and a simple maintenance banner */
+/* ========================================
+   GLOBAL DESIGN SYSTEM - Dark Mode Theme
+   ======================================== */
+
+:root {
+  /* Dark Background Colors */
+  --bg-primary: #0a0e27;      /* Main dark background */
+  --bg-secondary: #1a1f3a;    /* Slightly lighter dark for cards/sections */
+  
+  /* Accent Colors */
+  --accent-primary: #00d9ff;  /* Bright cyan - main highlight color */
+  --accent-secondary: #00fff2; /* Turquoise - secondary accent */
+  --accent-tertiary: #00b4ff;  /* Deep cyan - tertiary accent */
+  
+  /* Text Colors */
+  --text-primary: #e4e4e7;    /* Off-white for main text */
+  --text-secondary: #a1a1aa;  /* Dimmed text for secondary content */
+  
+  /* Glass/Transparency Colors */
+  --glass-bg: rgba(26, 31, 58, 0.4);           /* Glassmorphism background */
+  --glass-border: rgba(0, 217, 255, 0.3);      /* Glass border */
+  --glass-highlight: rgba(255, 255, 255, 0.1); /* Glass highlight */
+  
+  /* Animation Colors - Puddles */
+  --puddle-primary: rgba(0, 217, 255, 0.5);
+  --puddle-primary-mid: rgba(0, 217, 255, 0.2);
+  --puddle-secondary: rgba(0, 255, 242, 0.45);
+  --puddle-tertiary: rgba(0, 180, 255, 0.4);
+  --puddle-tertiary-mid: rgba(0, 217, 255, 0.15);
+  
+  /* Utility Colors */
+  --shadow-strong: rgba(0, 0, 0, 0.5);
+  --highlight-subtle: rgba(0, 217, 255, 0.1);
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
 
 html, body {
-	height: 100%;
-	margin: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .maintenance {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	background: linear-gradient(90deg, #ff7a7a, #ff67d9, #8b6bff);
-	color: white;
-	text-align: center;
-	padding: 0.65rem 1rem;
-	font-weight: 600;
-	font-family: Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(90deg, var(--bg-secondary), var(--accent-primary));
+  color: var(--text-primary);
+  text-align: center;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Push the app content down so banner doesn't cover it */
 main {
-	padding-top: 3.25rem; /* leaves space for the banner */
+  padding-top: 3.25rem;
 }
 
 @media (max-width: 600px) {
-	.maintenance { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
-	main { padding-top: 3.5rem; }
+  .maintenance { 
+    font-size: 0.9rem; 
+    padding: 0.5rem 0.75rem; 
+  }
+  main { 
+    padding-top: 3.5rem; 
+  }
 }
