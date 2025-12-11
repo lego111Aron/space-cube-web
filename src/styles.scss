@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles and a simple maintenance banner */
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.maintenance {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	background: linear-gradient(90deg, #ff7a7a, #ff67d9, #8b6bff);
+	color: white;
+	text-align: center;
+	padding: 0.65rem 1rem;
+	font-weight: 600;
+	font-family: Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Push the app content down so banner doesn't cover it */
+main {
+	padding-top: 3.25rem; /* leaves space for the banner */
+}
+
+@media (max-width: 600px) {
+	.maintenance { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
+	main { padding-top: 3.5rem; }
+}
