@@ -6,14 +6,262 @@
     <div class="wave wave3"></div>
   </div>
 
-  <!-- Content -->
-  <div class="glass-content">
-    <h1 class="glass-title">Kockulós Room 2025/26 Tél</h1>
-    <p class="glass-subtitle">Minecraft Szerver</p>
+  <!-- Two Column Layout -->
+  <div class="content-wrapper">
+    <!-- Left Sidebar - Server Profile -->
+    <aside class="server-profile">
+      <div class="profile-card">
+        <!-- Server Header -->
+        <div class="profile-header">
+          <div class="server-icon"><img src="media/server-icon.png" alt="Server Icon"></div>
+          <h1 class="server-name">Kockulós Room</h1>
+          <p class="server-season">2025/26 Tél</p>
+        </div>
+
+        <!-- Launch Status -->
+        <div class="launch-badge">
+          <div class="badge-content">
+            <span class="badge-label">Szerver indulás</span>
+            <span class="badge-date">2025.12.26</span>
+          </div>
+        </div>
+
+        <!-- Server Address -->
+        <div class="server-connection">
+          <label>Szerver Cím</label>
+          <div class="server-address" title="Kattints a másoláshoz" (click)="copyToClipboard($event)"
+            [class.copied]="isCopied">
+            <code style="user-select: none;">mc.space-cube.hu</code>
+            <span class="copy-feedback" *ngIf="isCopied">✓ Másolva!</span>
+          </div>
+        </div>
+
+        <!-- Technical Specs -->
+        <div class="profile-section">
+          <h3 class="section-header">
+            Technikai Adatok
+          </h3>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Verzió</span>
+              <span class="spec-value">1.21.10</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Modloader</span>
+              <span class="spec-value">Fabric</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Max. játékosok</span>
+              <span class="spec-value">15 fő</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Világ típus</span>
+              <span class="spec-value">Survival</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Világ generálása</span>
+              <span class="spec-value">Terralit + Tectonic</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Java verzió</span>
+              <span class="spec-value">21+</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="profile-section">
+          <h3 class="section-header">
+            Gyors Linkek
+          </h3>
+          <div class="quick-links">
+            <!-- <a href="https://docs.google.com/document/d/189ClE1IsYVXVfYHYaOfjZH7mP9xcX8pdOHjjLP_lYLQ/edit?usp=sharing" 
+               class="quick-link" target="_blank" rel="noopener noreferrer">
+              <span>Telepítési Útmutató</span>
+            </a> -->
+            <a href="https://drive.google.com/file/d/1cRDApNdXq2248ZnZcO2Fs12jsA1INh3D/view?usp=sharing"
+              class="quick-link" target="_blank" rel="noopener noreferrer">
+              <span class="link-icon">📦</span>
+              <span>Szükséges Modok</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="profile-section support-section">
+          <h3 class="section-header">
+            Kapcsolat
+          </h3>
+          <p class="support-text">
+            Kérdésed van? Jelezd a <strong>Kockulós Room</strong> Discord szerveren a
+            <code>&#64;MinecraftServerAdmin</code> taggel!
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Feed -->
+    <main class="content-feed">
+
+      <!-- Requirements Section -->
+      <div class="feed-section">
+        <h2 class="feed-title">A csatlakozáshoz szükséges szoftverek</h2>
+
+        <div class="requirement-box">
+          <h3>Prism Launcher</h3>
+          <p>A Minecraft futtatásához szükséges egy launcher. Bár valószínűleg mással is megoldható mi csak ehhez
+            nyújtunk támogatást.</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>Eredeti Minecraft fiókkal</h4>
+              <div class="download-links">
+                <a href="https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Windows-MSVC-Setup-9.4.exe"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🪟</span> Windows
+                </a>
+                <a href="https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Linux-x86_64.AppImage"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🐧</span> Linux
+                </a>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h4>Eredeti fiók nélkül</h4>
+              <div class="download-links">
+                <a href="https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/9.4/PrismLauncher-Windows-MinGW-w64-Setup-9.4.exe"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🪟</span> Windows
+                </a>
+                <a href="https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/9.4/PrismLauncher-Linux-x86_64.AppImage"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🐧</span> Linux
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-box">
+            <h3>Java 21</h3>
+            <p>Szükséges a játék futtatásához (legalább 21-es verzió, csak ezzel lett tesztelve)</p>
+            <a href="https://download.oracle.com/java/21/archive/jdk-21.0.8_windows-x64_bin.exe"
+              class="download-btn large" target="_blank" rel="noopener noreferrer">
+              <span class="icon">☕</span> Java 21 letöltése (Windows)
+            </a>
+          </div>
+
+          <div class="requirement-box">
+            <h3>Szükséges modok</h3>
+            <p>Ez a csomag nem csak a modokat hanem minden azokhoz tartozó beállítást is tartalmaz. (A beállításokat a
+              felhasználó szabadon állíthatja, de ajánlott elősször a már megadott beállításokkal felcsatlakozni a hibák
+              kiszűrése érdekében.) </p>
+            <a href="https://drive.google.com/file/d/1cRDApNdXq2248ZnZcO2Fs12jsA1INh3D/view?usp=sharing"
+              class="download-btn large" target="_blank" rel="noopener noreferrer">
+              <span class="icon">📦</span> Modok letöltése
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Guide Section -->
+      <div class="feed-section">
+        <h2 class="feed-title">A csatlakozáshoz szükséges lépések</h2>
+
+        <!-- Getting Started -->
+        <div class="guide-section">
+          <h3> Kezdés</h3>
+          <div class="guide-content">
+            <div class="guide-step">
+              <img src="media/explorer_A1mbSkjxdq.png" alt="Szerver csatlakozás" class="guide-img">
+            </div>
+
+          </div>
+        </div>
+
     
-    <div class="glass-info-box">
-      <span class="icon">ℹ️</span>
-      <span>Részletes információk hamarosan...</span>
-    </div>
+
+        <!-- Important Commands -->
+        <div class="guide-section">
+          <h3>Belépés után</h3>
+          <div class="guide-content">
+            <div class="commands-grid">
+              <div class="command-card">
+                <code>/spawn</code>
+                <p>Visszateleportálás a spawn pontra</p>
+              </div>
+              <div class="command-card">
+                <code>/sethome [név]</code>
+                <p>Otthon pont beállítása</p>
+              </div>
+              <div class="command-card">
+                <code>/home [név]</code>
+                <p>Teleportálás az otthon pontodra</p>
+              </div>
+              <div class="command-card">
+                <code>/tpa [játékos]</code>
+                <p>Teleportálási kérelem küldése</p>
+              </div>
+              <div class="command-card">
+                <code>/tpaccept</code>
+                <p>Teleportálási kérelem elfogadása</p>
+              </div>
+              <div class="command-card">
+                <code>/back</code>
+                <p>Visszateleportálás az előző helyedre</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rules -->
+        <!-- <div class="guide-section rules">
+          <h3><span class="emoji">📜</span> Szabályok</h3>
+          <div class="guide-content">
+            <div class="rules-list">
+              <div class="rule-item">
+                <span class="rule-icon">🤝</span>
+                <div>
+                  <strong>Tisztelet és együttműködés</strong>
+                  <p>Legyél tiszteletteljes a többi játékos felé! Segítsetek egymásnak!</p>
+                </div>
+              </div>
+              <div class="rule-item">
+                <span class="rule-icon">🏗️</span>
+                <div>
+                  <strong>Griefing tilos!</strong>
+                  <p>Ne rongáld meg mások építményeit. Ha véletlenül kárt okozol, javítsd ki vagy jelezd!</p>
+                </div>
+              </div>
+              <div class="rule-item">
+                <span class="rule-icon">🎭</span>
+                <div>
+                  <strong>Fair play</strong>
+                  <p>Ne használj cheateket vagy exploitokat. Játssz tisztességesen!</p>
+                </div>
+              </div>
+              <div class="rule-item">
+                <span class="rule-icon">🗣️</span>
+                <div>
+                  <strong>Kommunikáció</strong>
+                  <p>Használd a Discord szervert problémák jelzésére vagy kérdések feltevésére!</p>
+                </div>
+              </div>
+              <div class="rule-item warning">
+                <span class="rule-icon">⚠️</span>
+                <div>
+                  <strong>Szabályszegés következményei</strong>
+                  <p>A szabályok megsértése figyelmeztetést, ideiglenes vagy végleges kitiltást eredményezhet!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+    </main>
   </div>
 </div>
