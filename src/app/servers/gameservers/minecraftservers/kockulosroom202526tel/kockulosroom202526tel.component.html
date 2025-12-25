@@ -103,6 +103,14 @@
     <!-- Right Content Feed -->
     <main class="content-feed">
 
+      <!-- Important Notice -->
+      <div class="important-notice">
+        <div class="notice-content">
+          <span class="notice-icon">⚠️</span>
+          <p>Abban az esetben ha részvettél a terheléses tesztelésen akkor is töltsd le újra modokat és olvasd el a csatlakozási lépések <a (click)="scrollToStep5()" class="step-link">5. pontját</a>.</p>
+        </div>
+      </div>
+
       <!-- Requirements Section -->
       <div class="feed-section">
         <h2 class="feed-title">A csatlakozáshoz szükséges szoftverek</h2>
@@ -173,12 +181,37 @@
         <!-- Steps Container -->
         <div class="guide-section">
           <div class="guide-steps">
-            <!-- Step 1 Template -->
+            <!-- Step 1 -->
             <div class="step-item">
               <div class="step-number">1</div>
               <div class="step-content">
-                <h4>Lépés címe</h4>
-                <p>Ide írd a lépés részletes leírását. Ez a szöveg a bal oldalon jelenik meg, míg a kép (ha van) a jobb oldalon.</p>
+                <h4>Telepítés</h4>
+                <p>A Prism Launcher-t és Java-t telepíteni kell...</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Memória lekötése</h4>
+                <p>A Minecraft számára ajánlott 8 GB memória lekötése. Abban az esetben ha a gépe erőforrásai ezt nem
+                  engedik meg akkor a játék csupán 4GB rammal is képes futni.</p>
+              </div>
+              <div class="step-image-container" (click)="openImage('media/explorer_be0AokfKig.png')">
+                <img src="media/explorer_be0AokfKig.png" alt="Lépés illusztráció" class="step-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Java verzió kiválasztása</h4>
+                <p>Be kell állítani a megfelelő Java verziót a Prism Launcher-ben. Legalább 21-es verzió szükséges, de
+                  az a legjobb ha pontossan a 21-es verziót használjuk. (A képen a 21.0.5 verzió látható, de csak az a
+                  lényeg, hogy a fő verziószám azaz "21" egyezzen meg, a többi részlet nem számít.)</p>
               </div>
               <div class="step-image-container" (click)="openImage('media/explorer_A1mbSkjxdq.png')">
                 <img src="media/explorer_A1mbSkjxdq.png" alt="Lépés illusztráció" class="step-img">
@@ -186,12 +219,73 @@
               </div>
             </div>
 
-            <!-- Step 2 Template (No Image) -->
+            <!-- Step 4/A -->
             <div class="step-item">
-              <div class="step-number">2</div>
+              <div class="step-number">4/A</div>
               <div class="step-content">
-                <h4>Második lépés</h4>
-                <p>Ez egy kép nélküli lépés példája. A szöveg kitölti a rendelkezésre álló helyet.</p>
+                <h4>Bejelentkezés eredeti Minecraft fiókkal</h4>
+                <p>A bejelentkezés szükséges a felhasználó azonosításához és a szerverhez való csatlakozáshoz.</p>
+              </div>
+              <div class="step-image-container" (click)="openImage('media/explorer_dA6MMz88N0.png')">
+                <img src="media/explorer_dA6MMz88N0.png" alt="Lépés illusztráció" class="step-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+
+            <!-- Step 4/B -->
+            <div class="step-item">
+              <div class="step-number">4/B</div>
+              <div class="step-content">
+                <h4>Tört fióknév/játékosnév választás</h4>
+                <p>A névadás szükséges a felhasználó azonosításához és a szerverhez való csatlakozáshoz. (A szerver
+                  errez a névvel azonosítja a felhasználót ezért ennek a változtatása esetén a új felhasználóként kezeli
+                  a játékost)</p>
+              </div>
+              <div class="step-image-container" (click)="openImage('media/explorer_Pqpg7ywxY2.png')">
+                <img src="media/explorer_Pqpg7ywxY2.png" alt="Lépés illusztráció" class="step-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-item" id="step-5">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h4>Instance létrehozása</h4>
+                <p>A Prism Launcher-ben létre kell hozni egy új instance-t a szerverhez való csatlakozáshoz (a launcher
+                  több ilyen instance-t is kezelhet egyszerre ezek egymástól függetlenül működnek). Az instance neve
+                  alapesetben az lesz ami a zip neve is, ha már van ugyan olyan nevű instance akkor ezt érdemes lehet
+                  megváltoztatni, vagy a régi instance-t kitörölni. <b>(A letöltött zip neve eltérhet a képen szereplő
+                    nevétől ez nem probléma)</b></p>
+              </div>
+              <div class="step-image-container" (click)="openImage('media/explorer_eB0pDSxSac.png')">
+                <img src="media/explorer_eB0pDSxSac.png" alt="Lépés illusztráció" class="step-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-item">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h4>Játék indítása</h4>
+                <p>Egy új instance első indítása sok időt vehet igénybe, az ezt követő indítások már gyorsabbak lesznek.
+                  <b>(Az instance neve eltérhet a képen szereplő nevétől ez nem probléma)</b></p>
+              </div>
+              <div class="step-image-container" (click)="openImage('media/explorer_dgOwRQXMGg.png')">
+                <img src="media/explorer_dgOwRQXMGg.png" alt="Lépés illusztráció" class="step-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step-item">
+              <div class="step-number">7</div>
+              <div class="step-content">
+                <h4>Csatlakozás a szerverre</h4>
+                <p>Amikor megnyitja a <b>Multiplayer</b> menüt akkor ott automatikusan megjelenik a szerver a listában,
+                  ha nem akkor kézzel hozzáadhatja az IP címet az <b>Add Server</b> gombra kattintva. A szerver neve
+                  szabadon választható, a domain neve:<code>mc.space-cube.net</code> Az első belépést követően a szerver azoktól a felhasználóktól akiknek nincs eredeti Minecraft fiókja Regisztrációt fog kérni (az ehhez szükséges parancsot lejebb láthatod).</p>
               </div>
             </div>
           </div>
@@ -203,29 +297,32 @@
           <div class="guide-content">
             <div class="commands-grid">
               <div class="command-card">
-                <code>/reg jelszó jelszó</code>
+                <code>/reg [jelszó] [jelszó]</code>
                 <p>Regisztráció belépéskor</p>
               </div>
               <div class="command-card">
-                <code>/sethome [név]</code>
-                <p>Otthon pont beállítása</p>
-              </div>
+                <code>/login [jelszó]</code>
+                <p>Bejelentkezés a szerverre</p>
+              </div>                       
               <div class="command-card">
-                <code>/home [név]</code>
-                <p>Teleportálás az otthon pontodra</p>
-              </div>
-              <div class="command-card">
-                <code>/tpa [játékos]</code>
-                <p>Teleportálási kérelem küldése</p>
-              </div>
-              <div class="command-card">
-                <code>/tpaccept</code>
-                <p>Teleportálási kérelem elfogadása</p>
-              </div>
-              <div class="command-card">
-                <code>/back</code>
-                <p>Visszateleportálás az előző helyedre</p>
-              </div>
+                <code>/skin set ...</code>
+                <p>Skin beállítása (több különböző módon is lehetséges)</p>
+              </div>           
+            </div>
+          </div>
+        </div>
+
+        <!-- Potential problems -->
+        <div class="guide-section">
+          <h3>Potenciális problémák</h3>
+          <div class="guide-content">
+            <div class="problem-item">
+              <h4>Szerver alvó üzemmód</h4>
+              <p>Abban az esetben ha senki sincs a szerveren 10 percen keresztül akkor a szerver automatikusan átkerül alvó üzemmódba. Ha ilyenkor próbál valaki csatlakozni az első csatlakozási kísérlet sikertelen lesz mivel a szerver éppen ébred. Ilyenkor kérjük próbálkozzon újra a csatlakozással néhány másodperc múlva (kb 10s).</p>
+            </div>
+            <div class="problem-item">
+              <h4>Whitelist probléma</h4>
+              <p>Abban az esetben ha a szerver azt írja ki hogy nem vagy rajta a whitelist-en akkor kérjük jelezd a <code>&#64;MinecraftServerAdmin</code> taggel a Kockulós Room Discord szerveren.</p>
             </div>
           </div>
         </div>

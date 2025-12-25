@@ -6,6 +6,54 @@
   overflow-x: hidden;
 }
 
+// Important Notice Banner
+.important-notice {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto 2rem auto;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.2);
+  z-index: 10;
+
+  .notice-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .notice-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #fff;
+      line-height: 1.6;
+      font-weight: 500;
+
+      .step-link {
+        color: #ffc107;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: #ffeb3b;
+          text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+      }
+    }
+  }
+}
+
+
 // Two Column Layout Wrapper
 .content-wrapper {
   position: relative;
@@ -297,11 +345,6 @@
   border-radius: 8px;
   transition: all 0.3s ease;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
-  }
-
   .spec-label {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
@@ -532,6 +575,7 @@
     font-size: 1.5rem;
     color: white;
     margin-bottom: 0.75rem;
+    margin-top: 0;
     font-weight: 600;
   }
 
@@ -680,6 +724,7 @@
     color: rgba(255, 255, 255, 0.95);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
+    margin-top: 0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -693,6 +738,14 @@
 .guide-content {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
+
+  h4 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
 }
 
 .guide-step {
@@ -1009,8 +1062,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   // Simple outline design
   background: transparent;
   border: 2px solid rgba(0, 217, 255, 0.5);
@@ -1078,6 +1131,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 
@@ -1089,6 +1143,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;

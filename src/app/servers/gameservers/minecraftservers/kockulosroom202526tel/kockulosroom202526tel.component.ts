@@ -31,4 +31,17 @@ export class Kockulosroom202526telComponent {
   closeImage(): void {
     this.selectedImage = null;
   }
+
+  scrollToStep5(): void {
+    const element = document.getElementById('step-5');
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 120; // 120px offset a fejléc miatt
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
