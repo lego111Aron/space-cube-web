@@ -1,0 +1,44 @@
+.section { margin: 3rem 0; }
+.section-title { font-size: 2rem; color: white; margin-bottom: 1.5rem; font-weight: 600; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); }
+
+.requirement-box { background: rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); border-radius: 15px; padding: 2rem; margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.3s ease; }
+.requirement-box:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(0, 217, 255, 0.3); }
+.requirement-box h3 { font-size: 1.5rem; color: white; margin-bottom: 0.75rem; margin-top: 0; font-weight: 600; }
+.requirement-box p { color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; line-height: 1.6; }
+
+.requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+.requirements-grid .requirement-box { margin-bottom: 0; }
+
+.download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+.download-card { background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.3s ease; }
+.download-card:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
+.download-card h4 { font-size: 1.1rem; color: white; margin-bottom: 1rem; font-weight: 500; }
+
+.download-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); font-weight: 500; transition: all 0.3s ease; cursor: pointer; }
+.download-btn .icon { font-size: 1.2rem; }
+.download-btn:hover { background: rgba(255, 255, 255, 0.3); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+.download-btn:active { transform: translateY(0); }
+.download-btn.large { padding: 1rem 2rem; font-size: 1.1rem; width: 100%; }
+.download-btn.primary { background: rgba(76, 175, 80, 0.3); border-color: rgba(76, 175, 80, 0.5); box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); }
+.download-btn.primary:hover { background: rgba(76, 175, 80, 0.4); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3); }
+
+.guide-box { background: rgba(255, 255, 255, 0.12); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center; }
+.guide-box p { color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6; }
+
+.guide-section { background: rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.3s ease; }
+.guide-section:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(0, 217, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 217, 255, 0.15); }
+.guide-section.rules { border-left: 4px solid rgba(255, 193, 7, 0.6); }
+.guide-section h3 { color: rgba(255, 255, 255, 0.95); font-size: 1.8rem; margin-bottom: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+.guide-section h3 .emoji { font-size: 2rem; }
+
+.guide-content { color: rgba(255, 255, 255, 0.85); line-height: 1.8; }
+.guide-content h4 { margin-bottom: 0px; }
+.guide-content p { margin-top: 0.5rem; }
+
+.guide-step { margin-bottom: 1.5rem; }
+.guide-step p { margin-top: 1rem; font-size: 1.1rem; }
+
+.guide-img { width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid rgba(0, 217, 255, 0.3); transition: transform 0.3s ease; }
+.guide-img:hover { transform: scale(1.02); border-color: rgba(0, 217, 255, 0.6); }

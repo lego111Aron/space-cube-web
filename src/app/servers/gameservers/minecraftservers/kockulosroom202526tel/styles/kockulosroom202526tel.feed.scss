@@ -1,0 +1,115 @@
+.content-feed {
+    min-height: 100vh;
+}
+
+.feed-section {
+    background: rgba(26, 31, 58, 0.4);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feed-section:hover {
+    border-color: rgba(0, 217, 255, 0.35);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.feed-title {
+    font-size: 2rem;
+    color: white;
+    margin: 0 0 2rem 0;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+.glass-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(26, 31, 58, 0.4);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.glass-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.glass-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.glass-info-box {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.glass-info-box .icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.glass-info-box div {
+    flex: 1;
+    text-align: left;
+}
+
+.glass-info-box.highlight {
+    background: rgba(76, 175, 80, 0.25);
+    border-color: rgba(76, 175, 80, 0.5);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.glass-info-box.support {
+    background: rgba(33, 150, 243, 0.25);
+    border-color: rgba(33, 150, 243, 0.5);
+}
+
+.glass-info-box.support code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.glass-info-box strong {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.glass-info-box small {
+    opacity: 0.9;
+    display: block;
+    margin-top: 0.25rem;
+}
