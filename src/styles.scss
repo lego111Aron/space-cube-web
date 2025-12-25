@@ -62,11 +62,6 @@ html, body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Push the app content down so banner doesn't cover it */
-main {
-  // padding-top: 3.25rem;
-}
-
 @media (max-width: 600px) {
   .maintenance { 
     font-size: 0.9rem; 
