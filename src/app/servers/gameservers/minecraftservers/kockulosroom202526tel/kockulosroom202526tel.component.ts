@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '../../../../i18n/translate.service';
 import { HU_KOCKULOSROOM_202526TEL } from './i18n/hu';
-import { LINKS } from '../../../../config/links.config';
+import { LINKS } from '../../../../config/servers/gameservers/minecraftservers/kockulosroom202526tel/links.config';
 
 @Component({
   selector: 'app-kockulosroom202526tel',
@@ -26,6 +26,7 @@ export class Kockulosroom202526telComponent {
   selectedImage: string | null = null;
   links = LINKS;
   serverAddress = LINKS.serverDomain;
+  isTechnicalSpecsOpen = false;
 
   constructor(private i18n: TranslateService) {
     this.i18n.use(HU_KOCKULOSROOM_202526TEL);
@@ -62,5 +63,9 @@ export class Kockulosroom202526telComponent {
         behavior: 'smooth'
       });
     }
+  }
+
+  toggleTechnicalSpecs(): void {
+    this.isTechnicalSpecsOpen = !this.isTechnicalSpecsOpen;
   }
 }

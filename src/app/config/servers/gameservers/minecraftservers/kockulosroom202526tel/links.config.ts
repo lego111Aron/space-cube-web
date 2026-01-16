@@ -1,4 +1,7 @@
 export interface LinksConfig {
+  wordfile: string;
+  fullmodpackage: string;
+  onlyservermodpackage: string;
   prismOriginalWindows: string;
   prismOriginalLinux: string;
   prismCrackedWindows: string;
@@ -9,6 +12,12 @@ export interface LinksConfig {
 }
 
 export const LINKS: LinksConfig = {
+  wordfile:
+    'https://drive.google.com/file/d/1MtTy7RQyHtUH9KFT7tLlSLr5-Y1rGCQp/view?usp=sharing',
+  fullmodpackage:
+    'https://drive.google.com/file/d/1tZNl-ihP4WAGIJhbKIl9sQpTO7kut9gS/view?usp=sharing',
+  onlyservermodpackage:
+    'https://drive.google.com/file/d/1foCI6rRgHQmG_qveaPyody5hwHR3qZO1/view?usp=sharing',
   prismOriginalWindows:
     'https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Windows-MSVC-Setup-9.4.exe',
   prismOriginalLinux:

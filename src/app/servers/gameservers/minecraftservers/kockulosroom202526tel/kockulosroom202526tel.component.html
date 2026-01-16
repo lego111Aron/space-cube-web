@@ -13,35 +13,94 @@
       <div class="profile-card">
         <!-- Server Header -->
         <div class="profile-header">
-          <div class="server-icon"><img src="media/server-icon.png" alt="Server Icon"></div>
+          <div class="server-icon"><img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/server-icon.png" alt="Server Icon"></div>
           <h1 class="server-name">{{ 'server.header.name' | t }}</h1>
           <p class="server-season">{{ 'server.season' | t }}</p>
         </div>
 
         <!-- Launch Status -->
-        <div class="launch-badge">
+        <div class="close-badge">
+          <div class="badge-content">
+            <span class="badge-label">{{ 'close.label' | t }}</span>
+            <span class="badge-date">{{ 'close.date' | t }}</span>
+          </div>
+        </div>
+
+        <!-- Launch Status -->
+        <!-- <div class="launch-badge">
           <div class="badge-content">
             <span class="badge-label">{{ 'launch.label' | t }}</span>
             <span class="badge-date">{{ 'launch.date' | t }}</span>
           </div>
-        </div>
+        </div> -->
 
         <!-- Server Address -->
-        <div class="server-connection">
+        <!-- <div class="server-connection">
           <label>{{ 'server.connection.label' | t }}</label>
           <div class="server-address" title="Kattints a másoláshoz" (click)="copyToClipboard($event)"
             [class.copied]="isCopied">
             <code class="no-select">{{ serverAddress }}</code>
             <span class="copy-feedback" *ngIf="isCopied">✓ Másolva!</span>
           </div>
+        </div> -->
+
+        <!-- Interesting data -->
+        <div class="profile-section">
+          <div class="section-header-wrapper">
+            <h3 class="section-header">
+              {{ 'interestingdata.title' | t }}
+            </h3>
+            <button class="toggle-specs-btn" (click)="toggleTechnicalSpecs()" [class.open]="isTechnicalSpecsOpen">
+              <span class="toggle-icon">{{ isTechnicalSpecsOpen ? '▲' : '▼' }}</span>
+            </button>
+          </div>
+          <div class="specs-list" [class.open]="isTechnicalSpecsOpen">
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.version.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.version.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.modloader.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.modloader.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'interestingdata.maxPlayers.label' | t }}</span>
+              <span class="spec-value">{{ 'interestingdata.maxPlayers.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'interestingdata.allPlayers.label' | t }}</span>
+              <span class="spec-value">{{ 'interestingdata.allPlayers.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.worldType.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.worldType.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.worldGen.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.worldGen.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.javaVersion.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.javaVersion.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'interestingdata.wordfilesize.label' | t }}</span>
+              <span class="spec-value">{{ 'interestingdata.wordfilesize.value' | t }}</span>
+            </div>
+          </div>
         </div>
 
         <!-- Technical Specs -->
-        <div class="profile-section">
-          <h3 class="section-header">
-            {{ 'technical.title' | t }}
-          </h3>
-          <div class="specs-list">
+        <!-- <div class="profile-section">
+          <div class="section-header-wrapper">
+            <h3 class="section-header">
+              {{ 'technical.title' | t }}
+            </h3>
+            <button class="toggle-specs-btn" (click)="toggleTechnicalSpecs()" [class.open]="isTechnicalSpecsOpen">
+              <span class="toggle-icon">{{ isTechnicalSpecsOpen ? '▲' : '▼' }}</span>
+            </button>
+          </div>
+          <div class="specs-list" [class.open]="isTechnicalSpecsOpen">
             <div class="spec-item">
               <span class="spec-label">{{ 'specs.version.label' | t }}</span>
               <span class="spec-value">{{ 'specs.version.value' | t }}</span>
@@ -67,25 +126,21 @@
               <span class="spec-value">{{ 'specs.javaVersion.value' | t }}</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Quick Links -->
-        <div class="profile-section">
+        <!-- <div class="profile-section">
           <h3 class="section-header">
             {{ 'quickLinks.title' | t }}
           </h3>
           <div class="quick-links">
-            <!-- <a href="https://docs.google.com/document/d/189ClE1IsYVXVfYHYaOfjZH7mP9xcX8pdOHjjLP_lYLQ/edit?usp=sharing" 
-               class="quick-link" target="_blank" rel="noopener noreferrer">
-              <span>Telepítési Útmutató</span>
-            </a> -->
             <a [href]="links.modsPackage"
               class="quick-link" target="_blank" rel="noopener noreferrer">
               <span class="link-icon">📦</span>
               <span>{{ 'quickLinks.mods' | t }}</span>
             </a>
           </div>
-        </div>
+        </div> -->
 
         <!-- Support -->
         <div class="profile-section support-section">
@@ -100,16 +155,122 @@
     <!-- Right Content Feed -->
     <main class="content-feed">
 
+      <!-- Download Word -->
+      <div class="feed-section">
+        <!-- <h2 class="feed-title">{{ 'requirements.title' | t }}</h2> -->
+
+        <div class="requirement-box">
+          <h3>{{ 'downloadworld.title' | t }}</h3>
+          <p>{{ 'downloadworld.desc' | t }}</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'download.world' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.wordfile"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  {{ 'download.download' | t }}
+                </a>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h4>{{ 'download.fullmod' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.fullmodpackage"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  {{ 'download.download' | t }}
+                </a>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h4>{{ 'download.partialmod' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.onlyservermodpackage"
+                  class="download-btn" target="_blank" rel="noopener noreferrer">
+                  {{ 'download.download' | t }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="requirements-grid">
+          <div class="requirement-box">
+            <h3>{{ 'images.title' | t }}</h3>
+            
+            <div class="images-grid">
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.00.39.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.00.39.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.01.13.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.01.13.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.01.45.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.01.45.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.07.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.07.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.34.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.34.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.46.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.02.46.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.03.07.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.03.07.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.03.33.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.03.33.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.04.01.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.04.01.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.05.37.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.05.37.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+              
+              <div class="image-item" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.06.07.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/rewind/2026-01-16_17.06.07.png" alt="Rewind kép" class="gallery-img">
+                <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
       <!-- Important Notice -->
-      <div class="important-notice">
+      <!-- <div class="important-notice">
         <div class="notice-content">
           <span class="notice-icon">⚠️</span>
           <p>{{ 'notice.text' | t }} <a (click)="scrollToStep5()" class="step-link">{{ 'notice.link' | t }}</a>.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Requirements Section -->
-      <div class="feed-section">
+      <!-- <div class="feed-section">
         <h2 class="feed-title">{{ 'requirements.title' | t }}</h2>
 
         <div class="requirement-box">
@@ -166,16 +327,14 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Game Guide Section -->
-      <div class="feed-section">
+      
+      <!-- <div class="feed-section">
         <h2 class="feed-title">{{ 'guide.title' | t }}</h2>
 
-        <!-- Steps Container -->
         <div class="guide-section">
           <div class="guide-steps">
-            <!-- Step 1 -->
             <div class="step-item">
               <div class="step-number">1</div>
               <div class="step-content">
@@ -185,91 +344,84 @@
             </div>
             <hr>
 
-            <!-- Step 2 -->
             <div class="step-item">
               <div class="step-number">2</div>
               <div class="step-content">
                 <h4>{{ 'step2.title' | t }}</h4>
                 <p>{{ 'step2.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_be0AokfKig.png')">
-                <img src="media/explorer_be0AokfKig.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_be0AokfKig.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_be0AokfKig.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 3 -->
             <div class="step-item">
               <div class="step-number">3</div>
               <div class="step-content">
                 <h4>{{ 'step3.title' | t }}</h4>
                 <p>{{ 'step3.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_A1mbSkjxdq.png')">
-                <img src="media/explorer_A1mbSkjxdq.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_A1mbSkjxdq.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_A1mbSkjxdq.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 4/A -->
             <div class="step-item">
               <div class="step-number">4/A</div>
               <div class="step-content">
                 <h4>{{ 'step4a.title' | t }}</h4>
                 <p>{{ 'step4a.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_dA6MMz88N0.png')">
-                <img src="media/explorer_dA6MMz88N0.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_dA6MMz88N0.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_dA6MMz88N0.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 4/B -->
             <div class="step-item">
               <div class="step-number">4/B</div>
               <div class="step-content">
                 <h4>{{ 'step4b.title' | t }}</h4>
                 <p>{{ 'step4b.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_Pqpg7ywxY2.png')">
-                <img src="media/explorer_Pqpg7ywxY2.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_Pqpg7ywxY2.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_Pqpg7ywxY2.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 5 -->
             <div class="step-item" id="step-5">
               <div class="step-number">5</div>
               <div class="step-content">
                 <h4>{{ 'step5.title' | t }}</h4>
                 <p>{{ 'step5.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_eB0pDSxSac.png')">
-                <img src="media/explorer_eB0pDSxSac.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_eB0pDSxSac.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_eB0pDSxSac.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 6 -->
             <div class="step-item">
               <div class="step-number">6</div>
               <div class="step-content">
                 <h4>{{ 'step6.title' | t }}</h4>
                 <p>{{ 'step6.desc' | t }}</p>
               </div>
-              <div class="step-image-container" (click)="openImage('media/explorer_dgOwRQXMGg.png')">
-                <img src="media/explorer_dgOwRQXMGg.png" alt="Lépés illusztráció" class="step-img">
+              <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_dgOwRQXMGg.png')">
+                <img src="media/servers/gameservers/minecraftservers/kockulosroom202526tel/explorer_dgOwRQXMGg.png" alt="Lépés illusztráció" class="step-img">
                 <div class="zoom-hint"><span class="icon">🔍</span> Nagyítás</div>
               </div>
             </div>
             <hr>
 
-            <!-- Step 7 -->
             <div class="step-item">
               <div class="step-number">7</div>
               <div class="step-content">
@@ -280,7 +432,6 @@
           </div>
         </div>
 
-        <!-- Important Commands -->
         <div class="guide-section">
           <h3>{{ 'commands.title' | t }}</h3>
           <div class="guide-content">
@@ -301,7 +452,6 @@
           </div>
         </div>
 
-        <!-- Potential problems -->
         <div class="guide-section">
           <h3>{{ 'problems.title' | t }}</h3>
           <div class="guide-content">
@@ -316,51 +466,7 @@
           </div> 
         </div>
 
-        <!-- Rules -->
-        <!-- <div class="guide-section rules">
-          <h3><span class="emoji">📜</span> Szabályok</h3>
-          <div class="guide-content">
-            <div class="rules-list">
-              <div class="rule-item">
-                <span class="rule-icon">🤝</span>
-                <div>
-                  <strong>Tisztelet és együttműködés</strong>
-                  <p>Legyél tiszteletteljes a többi játékos felé! Segítsetek egymásnak!</p>
-                </div>
-              </div>
-              <div class="rule-item">
-                <span class="rule-icon">🏗️</span>
-                <div>
-                  <strong>Griefing tilos!</strong>
-                  <p>Ne rongáld meg mások építményeit. Ha véletlenül kárt okozol, javítsd ki vagy jelezd!</p>
-                </div>
-              </div>
-              <div class="rule-item">
-                <span class="rule-icon">🎭</span>
-                <div>
-                  <strong>Fair play</strong>
-                  <p>Ne használj cheateket vagy exploitokat. Játssz tisztességesen!</p>
-                </div>
-              </div>
-              <div class="rule-item">
-                <span class="rule-icon">🗣️</span>
-                <div>
-                  <strong>Kommunikáció</strong>
-                  <p>Használd a Discord szervert problémák jelzésére vagy kérdések feltevésére!</p>
-                </div>
-              </div>
-              <div class="rule-item warning">
-                <span class="rule-icon">⚠️</span>
-                <div>
-                  <strong>Szabályszegés következményei</strong>
-                  <p>A szabályok megsértése figyelmeztetést, ideiglenes vagy végleges kitiltást eredményezhet!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
+      </div> -->
 
     </main>
   </div>

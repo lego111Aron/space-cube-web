@@ -3,34 +3,88 @@
    ======================================== */
 
 :root {
-  /* Dark Background Colors */
-  --bg-primary: #0a0e27;      /* Main dark background */
-  --bg-secondary: #1a1f3a;    /* Slightly lighter dark for cards/sections */
+  /* =========================================
+     Color Palette Definition
+     ========================================= */
   
-  /* Accent Colors */
-  --accent-primary: #00d9ff;  /* Bright cyan - main highlight color */
-  --accent-secondary: #00fff2; /* Turquoise - secondary accent */
-  --accent-tertiary: #00b4ff;  /* Deep cyan - tertiary accent */
+  /* Brand Identity */
+  --brand-primary: #ff3c00;       /* Main Brand Orange */
+  --brand-primary-rgb: 255, 60, 0;
+  --brand-hover: #ff5722;         /* Lighter Orange */
   
-  /* Text Colors */
-  --text-primary: #e4e4e7;    /* Off-white for main text */
-  --text-secondary: #a1a1aa;  /* Dimmed text for secondary content */
+  /* Provided Theme Colors */
+  --theme-blue-dark: #003a4d;     /* Dark Blue/Teal */
+  --theme-blue-dark-rgb: 0, 58, 77;
+  --theme-blue-mid: #1c4d79;      /* Mid Blue */
+  --theme-blue-mid-rgb: 28, 77, 121;
+  --theme-blue-gray: #49637b;     /* Blue Gray */
+  --theme-blue-gray-rgb: 73, 99, 123;
   
-  /* Glass/Transparency Colors */
-  --glass-bg: rgba(26, 31, 58, 0.4);           /* Glassmorphism background */
-  --glass-border: rgba(0, 217, 255, 0.3);      /* Glass border */
-  --glass-highlight: rgba(255, 255, 255, 0.1); /* Glass highlight */
+  /* Backgrounds */
+  --bg-primary: #05080a;          /* Deepest Background */
+  --bg-secondary: #0b1419;        /* Secondary Background */
+  --bg-tertiary: #0e1e26;         /* Tertiary Background */
   
-  /* Animation Colors - Puddles */
-  --puddle-primary: rgba(0, 217, 255, 0.5);
-  --puddle-primary-mid: rgba(0, 217, 255, 0.2);
-  --puddle-secondary: rgba(0, 255, 242, 0.45);
-  --puddle-tertiary: rgba(0, 180, 255, 0.4);
-  --puddle-tertiary-mid: rgba(0, 217, 255, 0.15);
+  /* Accents */
+  --accent-primary: var(--brand-primary);
+  --accent-secondary: var(--theme-blue-mid);
+  --accent-tertiary: var(--theme-blue-dark);
   
-  /* Utility Colors */
-  --shadow-strong: rgba(0, 0, 0, 0.5);
-  --highlight-subtle: rgba(0, 217, 255, 0.1);
+  /* Text */
+  --text-primary: #e6e6e6;        /* Primary Text */
+  --text-secondary: #b0bec5;      /* Secondary Text */
+  --text-muted: #78909c;          /* Muted Text */
+  --text-on-brand: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 0, 0, 0;
+  
+  /* Borders & Glass */
+  --border-color: rgba(73, 99, 123, 0.3);
+  --separator-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(14, 18, 22, 0.68);
+  --glass-border: rgba(255, 60, 0, 0.16);
+  --glass-highlight: rgba(255, 60, 0, 0.04);
+
+  /* Matte Glass Panel System */
+  --panel-bg-1: rgba(24, 27, 34, 0.78);
+  --panel-bg-2: rgba(12, 14, 18, 0.92);
+  --panel-border-light: rgba(255, 255, 255, 0.05);
+  --panel-border-dark: rgba(0, 0, 0, 0.6);
+  --panel-inner-top: rgba(255, 255, 255, 0.03);
+  --panel-shadow: rgba(0, 0, 0, 0.4);
+
+  /* Brand-derived and Utility Colors */
+  --warning: #ff9800;
+  --warning-rgb: 255, 152, 0;
+
+  /* Opacity scale (alphas) */
+  --alpha-02: 0.02;
+  --alpha-03: 0.03;
+  --alpha-05: 0.05;
+  --alpha-06: 0.06;
+  --alpha-07: 0.07;
+  --alpha-08: 0.08;
+  --alpha-10: 0.10;
+  --alpha-12: 0.12;
+  --alpha-15: 0.15;
+  --alpha-20: 0.20;
+  --alpha-25: 0.25;
+  --alpha-30: 0.30;
+  --alpha-35: 0.35;
+  --alpha-40: 0.40;
+  --alpha-50: 0.50;
+  --alpha-60: 0.60;
+  --alpha-70: 0.70;
+
+  /* Animations / Effects */
+  --shadow-strong: rgba(0, 0, 0, 0.6);
+  
+  /* Puddle Colors (Background Animation) */
+  --puddle-primary: rgba(255, 60, 0, 0.3);
+  --puddle-primary-mid: rgba(255, 60, 0, 0.1);
+  --puddle-secondary: rgba(28, 77, 121, 0.3);
+  --puddle-tertiary: rgba(0, 58, 77, 0.3);
+  --puddle-tertiary-mid: rgba(0, 58, 77, 0.1);
 }
 
 /* Global styles */
@@ -93,7 +147,7 @@ html, body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.28;
 }
 
 .wave {
