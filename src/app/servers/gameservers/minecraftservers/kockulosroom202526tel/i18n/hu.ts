@@ -1,4 +1,5 @@
 export const HU_KOCKULOSROOM_202526TEL: Record<string, string> = {
+  'login.button': 'Bejelentkezés',
   'notice.text': 'Abban az esetben is, ha már részt vett a terheléses tesztelésen, kérjük töltse le újra a modokat, és olvassa el a csatlakozási lépések',
   'notice.link': '5. pontját',
 

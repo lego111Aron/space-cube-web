@@ -1,216 +1,217 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService, Language } from '../i18n/translate.service';
+import { TranslatePipe } from '../i18n/translate.pipe';
+import { HU_HOME } from './i18n/hu';
+import { EN_HOME } from './i18n/en';
+import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe, CommonModule],
   template: `
-    <div class="home-container">
-      <!-- Animated Wave Background -->
-      <div class="wave-background">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-      </div>
-
-      <!-- Content -->
-      <div class="content">
-        <h1 class="title">SpaceCube</h1>
-        <p class="subtitle">Főoldal</p>
-        <div class="location">
-          <span class="icon">📍</span>
-          <span>Jelenlegi pozíció: <strong>Főoldal</strong></span>
-        </div>
-      </div>
+    <div class="page-container">
+        <!-- Right Content Feed -->
+        <main class="main-content">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="title-container">
+                <h1 class="page-title">{{ 'home.title' | t }}</h1>
+                <img style="width: 50px; height: 50px;" src="media/space-cube_icon.png" alt="Avatar" class="profile-avatar" />
+              </div>
+              <p class="page-subtitle" [innerHTML]="'home.subtitle' | t"></p>
+            </div>
+            
+            <div class="info-badge">
+              <span class="badge-label">{{ 'home.position.label' | t }}</span>
+              <span class="badge-value">{{ 'home.position.value' | t }}</span>
+            </div>
+          </div>
+        </main>
     </div>
   `,
   styles: [`
-    .home-container {
-      position: relative;
-      min-height: calc(100vh - 3.25rem);
-      overflow: hidden;
+    .title-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 1rem;
+      justify-content: center;      
     }
 
-    /* Animated Background - Liquid Puddles */
-    .wave-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    .wave {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      will-change: transform;
-    }
-
-    .wave1 {
-      width: 450px;
-      height: 450px;
-      top: 10%;
-      left: 5%;
-      background: radial-gradient(
-        circle,
-        var(--puddle-primary) 0%,
-        var(--puddle-primary-mid) 40%,
-        transparent 80%
-      );
-      animation: puddle1 15s ease-in-out infinite;
-    }
-
-    .wave2 {
-      width: 380px;
-      height: 380px;
-      top: 15%;
-      right: 10%;
-      background: radial-gradient(
-        circle,
-        var(--puddle-secondary) 0%,
-        var(--puddle-primary-mid) 40%,
-        transparent 80%
-      );
-      animation: puddle2 12s ease-in-out infinite;
-      animation-delay: -3s;
-    }
-
-    .wave3 {
-      width: 500px;
-      height: 500px;
-      bottom: 5%;
-      left: 15%;
-      background: radial-gradient(
-        circle,
-        var(--puddle-tertiary) 0%,
-        var(--puddle-tertiary-mid) 40%,
-        transparent 80%
-      );
-      animation: puddle3 18s ease-in-out infinite;
-      animation-delay: -6s;
-    }
-
-    /* Puddle animations - they merge and separate */
-    @keyframes puddle1 {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-      }
-      25% {
-        transform: translate(150px, 80px) scale(1.3);
-      }
-      50% {
-        transform: translate(200px, 200px) scale(0.8);
-      }
-      75% {
-        transform: translate(80px, 120px) scale(1.1);
-      }
-    }
-
-    @keyframes puddle2 {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-      }
-      20% {
-        transform: translate(-100px, 100px) scale(1.2);
-      }
-      40% {
-        transform: translate(-180px, 220px) scale(0.9);
-      }
-      60% {
-        transform: translate(-120px, 150px) scale(1.4);
-      }
-      80% {
-        transform: translate(-50px, 80px) scale(0.85);
-      }
-    }
-
-    @keyframes puddle3 {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-      }
-      30% {
-        transform: translate(120px, -150px) scale(1.25);
-      }
-      60% {
-        transform: translate(200px, -100px) scale(0.95);
-      }
-    }
-
-    /* Content Styles - Enhanced Glassmorphism */
-    .content {
+    .page-container {
       position: relative;
-      z-index: 1;
-      text-align: center;
+      min-height: 100vh;
       padding: 2rem;
+      padding-top: 6rem;
+      overflow-x: hidden;
+    }
+
+    /* Layout */
+    .content-wrapper {
+      position: relative;
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 2rem;
+      align-items: start;
+      z-index: 1;
+    }
+
+    /* Sidebar / Profile Card */
+    .sidebar {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .profile-card {
       background: var(--glass-bg);
-      border-radius: 24px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 
-        0 8px 32px var(--shadow-strong),
-        inset 0 1px 0 var(--glass-highlight);
-      backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      max-width: 600px;
-      width: 90%;
+      backdrop-filter: blur(24px) saturate(180%);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px var(--shadow-strong, rgba(0,0,0,0.5)), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
     }
 
-    .title {
-      font-size: 3rem;
-      margin: 0 0 0.5rem 0;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .profile-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--separator-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      color: white;
+      margin: 0 0 1rem 0;
+      text-shadow: 0 2px 8px rgba(var(--brand-primary-rgb), 0.5);
     }
 
-    .subtitle {
-      font-size: 1.5rem;
-      margin: 0 0 2rem 0;
+    .page-subtitle {
+      font-size: 1.2rem;
       color: var(--text-secondary);
-      font-weight: 400;
+      font-weight: 300;
+      margin: 0.5rem 0 0 0;
     }
-
-    .location {
-      display: inline-flex;
+    
+    .info-badge {
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--highlight-subtle);
-      border: 1px solid var(--accent-primary);
-      border-radius: 8px;
+      padding: 1rem;
+      background: linear-gradient(135deg, rgba(var(--brand-primary-rgb), 0.15), rgba(var(--brand-primary-rgb), 0.05));
+      border-radius: 12px;
+      border: 1px solid rgba(var(--brand-primary-rgb), 0.3);
+    }
+
+    .badge-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .badge-value {
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    /* Main Content */
+    .feed-section {
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px var(--shadow-strong, rgba(0,0,0,0.5)), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
+      margin-bottom: 2rem;
+    }
+
+    .feed-section:hover {
+        transform: translateY(-2px);
+        border-color: rgba(var(--brand-primary-rgb), 0.3);
+        box-shadow: 
+            0 12px 32px rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            0 0 0 1px rgba(var(--brand-primary-rgb), 0.1); 
+        transition: all 0.3s ease;
+    }
+
+    .feed-title {
+      font-size: 2rem;
       color: var(--text-primary);
-      font-size: 1rem;
+      margin: 0 0 2rem 0;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--separator-color);
     }
 
-    .icon {
-      font-size: 1.25rem;
+    .glass-content {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(26, 31, 58, 0.4);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        backdrop-filter: blur(24px) saturate(180%);
+        border-radius: 24px;
+        padding: 3rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(var(--brand-primary-rgb), 0.3);
     }
 
-    strong {
-      color: var(--accent-primary);
+    .glass-content p {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    @media (max-width: 768px) {
-      .title {
-        font-size: 2rem;
+    /* Responsive */
+    @media (max-width: 968px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
       }
-
-      .subtitle {
-        font-size: 1.2rem;
-      }
-
-      .content {
-        padding: 1.5rem;
+      
+      .sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
       }
     }
   `]
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit, OnDestroy {
+  langSub!: Subscription;
+
+  constructor(private i18n: TranslateService) {}
+
+  ngOnInit() {
+    this.updateLanguage(this.i18n.currentLang());
+    this.langSub = this.i18n.onLanguageChange.subscribe(lang => {
+      this.updateLanguage(lang);
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langSub) {
+      this.langSub.unsubscribe();
+    }
+  }
+
+  private updateLanguage(lang: Language) {
+    if (lang === 'en') {
+      this.i18n.use(EN_HOME);
+    } else {
+      this.i18n.use(HU_HOME);
+    }
+  }
+}

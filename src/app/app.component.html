@@ -1,3 +1,40 @@
-<div class="maintenance">Az oldal jelenleg fejlesztés alatt — hamarosan visszatérünk</div>
+<!-- Global Animated Background -->
+<div class="wave-background">
+  <div class="wave wave1"></div>
+  <div class="wave wave2"></div>
+  <div class="wave wave3"></div>
+</div>
+
+<!-- Global Header -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <!-- Optional Logo/Branding -->
+    </div>
+    <div class="header-actions">
+      <!-- Login Button / User Profile -->
+      <ng-container *ngIf="!userSignal(); else userProfile">
+        <button class="login-btn" (click)="goToLogin()">
+          <span class="icon">➜</span> {{ 'login.button' | t }}
+        </button>
+      </ng-container>
+      
+      <ng-template #userProfile>
+        <div class="user-info">
+            <!-- Optional: Show user avatar or name -->
+            <img *ngIf="userSignal()?.photoURL" [src]="userSignal()?.photoURL" class="user-avatar">
+            <button class="login-btn logout" (click)="logout()">
+              {{ 'logout.button' | t }}
+            </button>
+        </div>
+      </ng-template>
+      
+      <!-- Language Button -->
+      <button class="lang-btn" *ngIf="showLangSelector" (click)="toggleLanguage()">
+        {{ i18n.currentLang() === 'hu' ? 'EN' : 'HU' }}
+      </button>
+    </div>
+  </div>
+</header>
 
 <router-outlet />
