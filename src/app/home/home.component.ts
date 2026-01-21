@@ -72,7 +72,7 @@ import { CommonModule } from '@angular/common';
       border-radius: 20px;
       padding: 2rem;
       box-shadow: 0 8px 32px var(--shadow-strong, rgba(0,0,0,0.5)), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
+      // border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
     }
 
     .profile-header {

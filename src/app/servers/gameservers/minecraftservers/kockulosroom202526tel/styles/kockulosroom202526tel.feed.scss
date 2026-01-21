@@ -9,12 +9,12 @@
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 8px 32px var(--shadow-strong), inset 0 1px 0 rgba(var(--white-rgb), var(--alpha-10));
-    border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
+    // border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
     margin-bottom: 2rem;
     position: relative;
 }
 
-.feed-section:hover {
+/* .feed-section:hover {
     // Slight lift and glow
     transform: translateY(-2px);
     border-color: rgba(var(--brand-primary-rgb), 0.3);
@@ -22,7 +22,7 @@
         0 12px 32px rgba(0, 0, 0, 0.6),
         inset 0 1px 0 rgba(255, 255, 255, 0.05),
         0 0 0 1px rgba(var(--brand-primary-rgb), 0.1); 
-}
+} */
 
 .feed-title {
     font-size: 2rem;

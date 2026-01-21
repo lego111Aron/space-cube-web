@@ -1,0 +1,17 @@
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  align-items: start;
+}

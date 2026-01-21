@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'gameservers',
     loadChildren: () =>
       import('./gameservers/gameservers.module').then(m => m.GameserversModule)
+  },
+  {
+    path: 'teamspeak',
+    loadChildren: () =>
+      import('./teamspeak/teamspeak.module').then(m => m.TeamspeakModule)
   }
 ];
 

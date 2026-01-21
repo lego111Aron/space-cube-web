@@ -1,0 +1,33 @@
+@media (max-width: 1200px) {
+  .content-wrapper { grid-template-columns: 340px 1fr; gap: 1.5rem; }
+  .profile-card { padding: 1.5rem; }
+}
+
+@media (max-width: 968px) {
+  .content-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+  .server-profile { position: relative; top: 0; }
+  .profile-card { padding: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .toggle-specs-btn { display: block !important; }
+  .specs-list { max-height: 0; overflow: hidden; opacity: 0; margin-top: 0; }
+  .specs-list.open { max-height: 1000px; opacity: 1; margin-top: 1rem; }
+  .page-container { padding: 1rem; padding-top: 5rem; }
+  .content-wrapper { gap: 1.5rem; }
+  .profile-card { padding: 1.5rem; }
+  .feed-section { padding: 1.5rem; }
+  .feed-title { font-size: 1.6rem; }
+  .server-name { font-size: 1.5rem; }
+  .download-grid { grid-template-columns: 1fr; }
+  .requirement-box { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .page-container { padding: 0.75rem; padding-top: 5rem; }
+  .profile-card, .feed-section { padding: 1.25rem; }
+  .server-name { font-size: 1.3rem; }
+  .feed-title { font-size: 1.4rem; }
+  .download-btn { padding: 0.65rem 1.2rem; font-size: 0.95rem; }
+  .badge-date { font-size: 1.1rem; }
+}

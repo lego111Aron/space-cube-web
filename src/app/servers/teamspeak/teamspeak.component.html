@@ -1,0 +1,64 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <!-- Left Sidebar - Server Profile -->
+    <aside class="server-profile">
+      <div class="profile-card">
+        <div class="profile-header">
+          <h1 class="server-name">{{ 'page.title' | t }}</h1>
+        </div>
+
+        <div class="server-connection">
+          <label>{{ 'server.connection.label' | t }}</label>
+          <div class="server-address" title="Kattints a másoláshoz" (click)="copyToClipboard()">
+            <code class="no-select">{{ serverAddress }}</code>
+          </div>
+          <span class="copy-feedback" *ngIf="isCopied">{{ 'copy.copied' | t }}</span>
+        </div>
+
+        <!-- Adatok (Interesting Data) -->
+        <div class="profile-section">
+          <div class="section-header-wrapper">
+            <h3 class="section-header">{{ 'data.title' | t }}</h3>
+          </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">{{ 'data.version.label' | t }}</span>
+              <span class="spec-value">{{ 'data.version.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'data.maxclients.label' | t }}</span>
+              <span class="spec-value">{{ 'data.maxclients.value' | t }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kapcsolat -->
+        <div class="profile-section support-section">
+          <h3 class="section-header">{{ 'support.title' | t }}</h3>
+          <p class="support-text" [innerHTML]="('support.textHtml' | t)"></p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Feed -->
+    <main class="content-feed">
+      <div class="feed-section">
+        <div class="requirement-box">
+          <h3>{{ 'download.title' | t }}</h3>
+          <p>{{ 'download.desc' | t }}</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'download.client.title' | t }}</h4>
+              <div class="download-links">
+                <a href="https://www.teamspeak.com/en/downloads/" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  {{ 'download.button' | t }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

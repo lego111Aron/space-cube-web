@@ -1,0 +1,42 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <!-- Left Sidebar - Server Profile -->
+    <aside class="server-profile">
+      <div class="profile-card">
+        <div class="profile-header">
+          <h1 class="server-name">TeamSpeak 6</h1>
+        </div>
+
+        <div class="server-connection">
+          <label>Csatlakozási cím</label>
+          <div class="server-address" title="Kattints a másoláshoz" (click)="copyToClipboard()">
+            <code class="no-select">{{ serverAddress }}</code>
+            <span class="copy-hint">📋</span>
+          </div>
+          <span class="copy-feedback" *ngIf="isCopied">✓ Másolva!</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Feed -->
+    <main class="content-feed">
+      <div class="feed-section">
+        <div class="requirement-box">
+          <h3>Letöltés</h3>
+          <p>Töltsd le a TeamSpeak 6 kliens programot az alábbi linkről, majd csatlakozz a szerverünkhöz a megadott címen.</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>TeamSpeak 6 Client</h4>
+              <div class="download-links">
+                <a href="https://www.teamspeak.com/en/downloads/" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  Letöltés
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

@@ -59,7 +59,7 @@
 }
 
 .download-card {
-    background: rgba(var(--white-rgb), var(--alpha-05));
+    // background: rgba(var(--white-rgb), var(--alpha-05));
     border: 1px solid rgba(var(--white-rgb), var(--alpha-10));
     border-radius: 12px;
     padding: 1.5rem;
@@ -67,12 +67,12 @@
     height: 100%;
 }
 
-.download-card:hover {
+/* .download-card:hover {
     background: rgba(var(--white-rgb), var(--alpha-08));
     transform: translateY(-2px);
     border-color: rgba(var(--brand-primary-rgb), 0.3);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .download-card h4 {
     font-size: 1.1rem;
@@ -113,7 +113,7 @@
     background: rgba(var(--brand-primary-rgb), 0.25);
     border-color: var(--brand-primary);
     color: white;
-    transform: translateY(-2px);
+    // transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(var(--brand-primary-rgb), 0.2);
 }
 
