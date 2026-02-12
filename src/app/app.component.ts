@@ -18,6 +18,7 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent implements OnInit {
   title = 'space-cube-web';
   showLangSelector = true;
+  showLoginButton = true;
   userSignal: any;
 
   constructor(
@@ -41,6 +42,8 @@ export class AppComponent implements OnInit {
       // Hide header on specific routes like 'kockulosroom202526tel'
       // Adjust the check based on your actual route path
       this.showLangSelector = !event.url.includes('kockulosroom202526tel');
+      // Hide login button on specific routes
+      this.showLoginButton = !event.url.includes('kockulosroom202526tel') && !event.url.includes('teamspeak');
     });
   }
 

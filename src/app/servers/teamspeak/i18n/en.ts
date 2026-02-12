@@ -20,6 +20,6 @@ export const EN_TEAMSPEAK: Record<string, string> = {
 
   'announcement.title': 'Important Announcement',
   'announcement.message1': 'Discord is introducing global age-based restrictions in early March. By default, everyone will be treated as under 18 and may be required to verify their age via ID or face scan. Without verification, the account may operate in a restricted mode.',
-  'announcement.message2': 'If this affects many users and there is demand, I am committed to run the TeamSpeak server permanently (with possible downtimes), where Ricsi and Vilmos will be the main admins.',
+  'announcement.message2': 'If this bothers many of you, I am committed to running the TeamSpeak server permanently (although downtimes may occur, or changes in circumstances might arise that prevent me from maintaining the server), where Richárd and Vilmos would be the main admins.',
   'announcement.link': 'Official Discord Press Release',
 };
