@@ -43,6 +43,22 @@
     <!-- Right Content Feed -->
     <main class="content-feed">
       <div class="feed-section">
+        <!-- Fontos Közlemény -->
+        <div class="glass-info-box warning">
+          <!-- <div class="icon">⚠️</div> -->
+          <div>
+            <strong>{{ 'announcement.title' | t }}</strong>
+            <p style="margin-bottom: 0.5rem;">{{ 'announcement.message1' | t }}</p>
+            <p style="margin-bottom: 0.5rem;">{{ 'announcement.message2' | t }}</p>
+            <a href="https://discord.com/press-releases/discord-launches-teen-by-default-settings-globally"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="color: var(--brand-primary); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">
+              {{ 'announcement.link' | t }}
+            </a>
+          </div>
+        </div>
+
         <div class="requirement-box">
           <h3>{{ 'download.title' | t }}</h3>
           <p>{{ 'download.desc' | t }}</p>
