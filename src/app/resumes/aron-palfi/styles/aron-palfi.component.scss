@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'layout';
+@use 'hero';
+@use 'sections';
+@use 'animations';
+
+// Main Container
+.resume-container {
+  min-height: 100vh;
+  background: $darker-bg;
+  color: $text-primary;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}

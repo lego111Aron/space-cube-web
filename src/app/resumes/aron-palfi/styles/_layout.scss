@@ -1,0 +1,125 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Navigation
+.resume-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba($dark-bg, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  
+  .nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-brand {
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      @include gradient-text;
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+    
+    a {
+      color: $text-secondary;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        transition: width 0.3s ease;
+      }
+      
+      &:hover, &.active {
+        color: $text-primary;
+        
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+    .lang-btn {
+      background: transparent;
+      border: 1px solid $border-color;
+      color: $text-secondary;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      
+      &:hover, &.active {
+        border-color: $primary-color;
+        color: $primary-color;
+        background: rgba($primary-color, 0.1);
+      }
+    }
+    
+    .download-btn {
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      border: none;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba($primary-color, 0.4);
+      }
+    }
+  }
+}
+
+// Footer
+.resume-footer {
+  background: $darker-bg;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid $border-color;
+  
+  p {
+    margin: 0;
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+}

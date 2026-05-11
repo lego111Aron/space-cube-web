@@ -1,0 +1,146 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Hero Section
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba($primary-color, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba($secondary-color, 0.15) 0%, transparent 50%),
+    $darker-bg;
+  
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 1s ease;
+  }
+  
+  .hero-avatar {
+    position: relative;
+    margin: 0 auto 2rem;
+    width: 160px;
+    height: 160px;
+    
+    .avatar-circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba($primary-color, 0.4);
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $primary-color, $secondary-color, $accent-color);
+        z-index: -1;
+        opacity: 0.6;
+        animation: rotate 3s linear infinite;
+      }
+      
+      .avatar-initial {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+      }
+    }
+    
+    .status-indicator {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      background: $success-color;
+      border-radius: 50%;
+      border: 4px solid $darker-bg;
+      animation: pulse 2s ease infinite;
+    }
+  }
+  
+  .hero-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    @include gradient-text;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 1rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: $text-secondary;
+    margin: 0 0 3rem;
+    line-height: 1.6;
+  }
+  
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        @include gradient-text;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        color: $text-secondary;
+        text-transform: lowercase;
+      }
+    }
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s ease infinite;
+    
+    .mouse {
+      width: 30px;
+      height: 50px;
+      border: 2px solid $text-secondary;
+      border-radius: 15px;
+      position: relative;
+      
+      .wheel {
+        width: 4px;
+        height: 10px;
+        background: $text-secondary;
+        border-radius: 2px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll 2s ease infinite;
+      }
+    }
+  }
+}

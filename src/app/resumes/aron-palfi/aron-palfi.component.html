@@ -1,0 +1,272 @@
+<div class="resume-container">
+  <!-- Navigation Bar -->
+  <nav class="resume-nav">
+    <div class="nav-content">
+      <div class="nav-brand">
+        <span class="brand-name">{{ 'resume.name' | t }}</span>
+      </div>
+      <div class="nav-links">
+        <a (click)="scrollToSection('about')" 
+           [class.active]="activeSection === 'about'">
+          {{ 'section.about' | t }}
+        </a>
+        <a (click)="scrollToSection('experience')" 
+           [class.active]="activeSection === 'experience'">
+          {{ 'section.experience' | t }}
+        </a>
+        <a (click)="scrollToSection('education')" 
+           [class.active]="activeSection === 'education'">
+          {{ 'section.education' | t }}
+        </a>
+        <a (click)="scrollToSection('skills')" 
+           [class.active]="activeSection === 'skills'">
+          {{ 'section.skills' | t }}
+        </a>
+        <a (click)="scrollToSection('projects')" 
+           [class.active]="activeSection === 'projects'">
+          {{ 'section.projects' | t }}
+        </a>
+        <a (click)="scrollToSection('contact')" 
+           [class.active]="activeSection === 'contact'">
+          {{ 'section.contact' | t }}
+        </a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-btn" (click)="setLanguage('en')" [class.active]="currentLanguage === 'en'">EN</button>
+        <button class="lang-btn" (click)="setLanguage('hu')" [class.active]="currentLanguage === 'hu'">HU</button>
+        <button class="download-btn" (click)="downloadPDF()">
+          <span>{{ 'button.download' | t }}</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <div class="avatar-circle">
+          <span class="avatar-initial">ÁP</span>
+        </div>
+        <div class="status-indicator"></div>
+      </div>
+      <h1 class="hero-name">{{ 'resume.name' | t }}</h1>
+      <h2 class="hero-title">{{ 'resume.title' | t }}</h2>
+      <p class="hero-tagline">{{ 'resume.tagline' | t }}</p>
+      
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <span class="stat-value">{{ stat.value }}{{ stat.suffix }}</span>
+          <span class="stat-label">{{ stat.label | t }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="resume-section about-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">01.</span>
+        {{ 'section.about' | t }}
+      </h2>
+      <div class="about-content">
+        <p class="about-text">{{ 'about.description' | t }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="resume-section experience-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">02.</span>
+        {{ 'section.experience' | t }}
+      </h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="job-title">{{ 'experience.job1.title' | t }}</h3>
+            <div class="job-meta">
+              <span class="company">{{ 'experience.job1.company' | t }}</span>
+              <span class="period">{{ 'experience.job1.period' | t }}</span>
+            </div>
+            <p class="job-description">{{ 'experience.job1.description' | t }}</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="job-title">{{ 'experience.job2.title' | t }}</h3>
+            <div class="job-meta">
+              <span class="company">{{ 'experience.job2.company' | t }}</span>
+              <span class="period">{{ 'experience.job2.period' | t }}</span>
+            </div>
+            <p class="job-description">{{ 'experience.job2.description' | t }}</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3 class="job-title">{{ 'experience.job3.title' | t }}</h3>
+            <div class="job-meta">
+              <span class="company">{{ 'experience.job3.company' | t }}</span>
+              <span class="period">{{ 'experience.job3.period' | t }}</span>
+            </div>
+            <p class="job-description">{{ 'experience.job3.description' | t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="resume-section education-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">03.</span>
+        {{ 'section.education' | t }}
+      </h2>
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="education-icon">🎓</div>
+          <h3 class="degree-title">{{ 'education.degree1.title' | t }}</h3>
+          <p class="school-name">{{ 'education.degree1.school' | t }}</p>
+          <p class="education-period">{{ 'education.degree1.period' | t }}</p>
+        </div>
+        
+        <div class="education-card">
+          <div class="education-icon">🎓</div>
+          <h3 class="degree-title">{{ 'education.degree2.title' | t }}</h3>
+          <p class="school-name">{{ 'education.degree2.school' | t }}</p>
+          <p class="education-period">{{ 'education.degree2.period' | t }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="resume-section skills-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">04.</span>
+        {{ 'section.skills' | t }}
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-category" *ngFor="let category of skillCategories">
+          <h3 class="category-title">{{ category.title | t }}</h3>
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of category.skills">
+              <div class="skill-header">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" 
+                     [style.width]="getSkillWidth(skill.level)"
+                     [attr.data-level]="skill.level"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="resume-section projects-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">05.</span>
+        {{ 'section.projects' | t }}
+      </h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">{{ 'projects.project1.title' | t }}</h3>
+          </div>
+          <p class="project-description">{{ 'projects.project1.description' | t }}</p>
+          <div class="project-tech">{{ 'projects.project1.tech' | t }}</div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">{{ 'projects.project2.title' | t }}</h3>
+          </div>
+          <p class="project-description">{{ 'projects.project2.description' | t }}</p>
+          <div class="project-tech">{{ 'projects.project2.tech' | t }}</div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">{{ 'projects.project3.title' | t }}</h3>
+          </div>
+          <p class="project-description">{{ 'projects.project3.description' | t }}</p>
+          <div class="project-tech">{{ 'projects.project3.tech' | t }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="resume-section contact-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-number">06.</span>
+        {{ 'section.contact' | t }}
+      </h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <h4>{{ 'contact.email' | t }}</h4>
+          <p>aron.palfi&#64;example.com</p>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <h4>{{ 'contact.phone' | t }}</h4>
+          <p>+36 XX XXX XXXX</p>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <h4>{{ 'contact.location' | t }}</h4>
+          <p>Budapest, Hungary</p>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <h4>{{ 'contact.linkedin' | t }}</h4>
+          <p>linkedin.com/in/aronpalfi</p>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">💻</div>
+          <h4>{{ 'contact.github' | t }}</h4>
+          <p>github.com/aronpalfi</p>
+        </div>
+      </div>
+      
+      <div class="contact-cta">
+        <button class="cta-button" (click)="downloadPDF()">
+          {{ 'button.contact' | t }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="resume-footer">
+    <p>&copy; 2026 {{ 'resume.name' | t }}. All rights reserved.</p>
+  </footer>
+</div>

@@ -3,7 +3,8 @@ import { TranslateService } from './translate.service';
 
 @Pipe({ 
   name: 't',
-  pure: false // Allow pipe to re-evaluate when dictionary changes
+  pure: false, // Allow pipe to re-evaluate when dictionary changes
+  standalone: true
 })
 export class TranslatePipe implements PipeTransform {
   constructor(private translate: TranslateService) {}

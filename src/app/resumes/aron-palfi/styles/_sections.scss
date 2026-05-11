@@ -1,0 +1,360 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Resume Sections
+.resume-section {
+  padding: 6rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .title-number {
+      @include gradient-text;
+      font-size: 2rem;
+    }
+  }
+}
+
+// About Section
+.about-section {
+  background: linear-gradient(180deg, $darker-bg 0%, $dark-bg 100%);
+  
+  .about-content {
+    max-width: 800px;
+    
+    .about-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: $text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// Experience Section
+.experience-section {
+  background: $dark-bg;
+  
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, $primary-color, $secondary-color);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 3rem;
+      
+      .timeline-marker {
+        position: absolute;
+        left: -1rem;
+        top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: $primary-color;
+        border: 4px solid $dark-bg;
+        box-shadow: 0 0 0 4px rgba($primary-color, 0.2);
+      }
+      
+      .timeline-content {
+        background: $card-bg;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid $border-color;
+        @include card-hover;
+        
+        .job-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $text-primary;
+          margin: 0 0 0.75rem;
+        }
+        
+        .job-meta {
+          display: flex;
+          gap: 2rem;
+          margin-bottom: 1rem;
+          
+          .company, .period {
+            font-size: 0.95rem;
+            color: $text-secondary;
+          }
+          
+          .company {
+            color: $primary-color;
+            font-weight: 600;
+          }
+        }
+        
+        .job-description {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: $text-secondary;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// Education Section
+.education-section {
+  background: linear-gradient(180deg, $dark-bg 0%, $darker-bg 100%);
+  
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    
+    .education-card {
+      background: $card-bg;
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid $border-color;
+      text-align: center;
+      @include card-hover;
+      
+      .education-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .degree-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: $text-primary;
+        margin: 0 0 0.75rem;
+      }
+      
+      .school-name {
+        font-size: 1.1rem;
+        color: $primary-color;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+      }
+      
+      .education-period {
+        font-size: 0.95rem;
+        color: $text-secondary;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Skills Section
+.skills-section {
+  background: $darker-bg;
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    
+    .skill-category {
+      .category-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text-primary;
+        margin: 0 0 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid $border-color;
+      }
+      
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        
+        .skill-item {
+          .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            
+            .skill-name {
+              font-size: 1rem;
+              font-weight: 600;
+              color: $text-primary;
+            }
+            
+            .skill-level {
+              font-size: 0.9rem;
+              color: $text-secondary;
+              font-weight: 500;
+            }
+          }
+          
+          .skill-bar {
+            height: 8px;
+            background: $card-bg;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            
+            .skill-progress {
+              height: 100%;
+              background: linear-gradient(90deg, $primary-color, $secondary-color);
+              border-radius: 4px;
+              transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+              position: relative;
+              
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                animation: shimmer 2s infinite;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Projects Section
+.projects-section {
+  background: $dark-bg;
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    
+    .project-card {
+      background: $card-bg;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid $border-color;
+      @include card-hover;
+      
+      .project-header {
+        margin-bottom: 1rem;
+        
+        .project-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $text-primary;
+          margin: 0;
+        }
+      }
+      
+      .project-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $text-secondary;
+        margin: 0 0 1.5rem;
+      }
+      
+      .project-tech {
+        font-size: 0.9rem;
+        color: $primary-color;
+        font-weight: 500;
+        padding: 0.75rem;
+        background: rgba($primary-color, 0.1);
+        border-radius: 8px;
+        border-left: 3px solid $primary-color;
+      }
+    }
+  }
+}
+
+// Contact Section
+.contact-section {
+  background: linear-gradient(180deg, $dark-bg 0%, $darker-bg 100%);
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    
+    .contact-item {
+      background: $card-bg;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid $border-color;
+      text-align: center;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        border-color: $primary-color;
+        transform: translateY(-4px);
+      }
+      
+      .contact-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0 0 0.5rem;
+      }
+      
+      p {
+        font-size: 0.95rem;
+        color: $text-secondary;
+        margin: 0;
+      }
+    }
+  }
+  
+  .contact-cta {
+    text-align: center;
+    margin-top: 4rem;
+    
+    .cta-button {
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      border: none;
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba($primary-color, 0.4);
+      }
+    }
+  }
+}

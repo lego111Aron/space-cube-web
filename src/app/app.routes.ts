@@ -16,5 +16,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./servers/servers.module').then(m => m.ServersModule)
   },
+  {
+    path: 'resumes/aron-palfi',
+    loadComponent: () =>
+      import('./resumes/aron-palfi/aron-palfi.component').then(m => m.AronPalfiComponent)
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
