@@ -21,5 +21,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./resumes/aron-palfi/aron-palfi.component').then(m => m.AronPalfiComponent)
   },
+  {
+    path: 'etc/evolutionsimulator',
+    loadComponent: () => 
+      import('./etc/evolutionsimulator/evolutionsimulator.component').then(m => m.EvolutionsimulatorComponent)
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

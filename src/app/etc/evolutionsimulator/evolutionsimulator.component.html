@@ -1,0 +1,77 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <div class="header-section">
+      <h1>{{ 'evolutionsimulator.title' | t }}</h1>
+    </div>
+
+    <div class="glass-panel main-panel">
+      <!-- Intro -->
+      <p class="markdown-text" [innerHTML]="'evolutionsimulator.intro' | t"></p>
+      
+      <hr class="divider">
+
+      <!-- Section 1 -->
+      <h2 class="markdown-h2">{{ 'evolutionsimulator.sec1_title' | t }}</h2>
+      <p class="markdown-text">{{ 'evolutionsimulator.sec1_intro' | t }}</p>
+
+      <h3 class="markdown-h3">{{ 'evolutionsimulator.sec1_startup_title' | t }}</h3>
+      <p class="markdown-text" [innerHTML]="'evolutionsimulator.sec1_startup_win_title' | t"></p>
+      <ol class="markdown-list">
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_win_1' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_win_2' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_win_3' | t"></li>
+      </ol>
+
+      <p class="markdown-text mt-3" [innerHTML]="'evolutionsimulator.sec1_startup_lin_title' | t"></p>
+      <ol class="markdown-list">
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_lin_1' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_lin_2' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_lin_3' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_startup_lin_4' | t"></li>
+      </ol>
+
+      <h3 class="markdown-h3">{{ 'evolutionsimulator.usage_title' | t }}</h3>
+      <ul class="markdown-list">
+        <li [innerHTML]="'evolutionsimulator.sec1_usage_1' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_usage_2' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_usage_3' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec1_usage_4' | t"></li>
+      </ul>
+
+      <hr class="divider">
+
+      <!-- Section 2 -->
+      <h2 class="markdown-h2">{{ 'evolutionsimulator.sec2_title' | t }}</h2>
+      <p class="markdown-text">{{ 'evolutionsimulator.sec2_intro' | t }}</p>
+
+      <h3 class="markdown-h3">{{ 'evolutionsimulator.sec1_startup_title' | t }}</h3>
+      <ol class="markdown-list">
+        <li [innerHTML]="'evolutionsimulator.sec2_startup_1' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_startup_2' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_startup_3' | t"></li>
+        <pre class="markdown-code"><code>python run.py</code></pre>
+      </ol>
+
+      <h3 class="markdown-h3">{{ 'evolutionsimulator.usage_title' | t }}</h3>
+      <ul class="markdown-list">
+        <li [innerHTML]="'evolutionsimulator.sec2_usage_1' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_usage_2' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_usage_3' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_usage_4' | t"></li>
+      </ul>
+
+      <hr class="divider">
+
+      <blockquote class="markdown-quote">
+        <p [innerHTML]="'evolutionsimulator.note' | t"></p>
+      </blockquote>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light text-center py-4 mt-auto w-100">
+    <div class="container">
+      <p class="mb-2" [innerHTML]="'evolutionsimulator.footer_1' | t"></p>
+      <p class="small text-secondary mb-0" [innerHTML]="'evolutionsimulator.footer_2' | t"></p>
+    </div>
+  </footer>
+</div>

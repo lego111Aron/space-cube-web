@@ -43,7 +43,9 @@ export class AppComponent implements OnInit {
       // Adjust the check based on your actual route path
       this.showLangSelector = !event.url.includes('kockulosroom202526tel');
       // Hide login button on specific routes
-      this.showLoginButton = !event.url.includes('kockulosroom202526tel') && !event.url.includes('teamspeak');
+      this.showLoginButton = !event.url.includes('kockulosroom202526tel') && 
+                             !event.url.includes('teamspeak') && 
+                             !event.url.includes('evolutionsimulator');
     });
   }
 
