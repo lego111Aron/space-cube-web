@@ -1,5 +1,5 @@
 export interface LinksConfig {
-  // wordfile: string;
+  wordfile: string;
   fullmodpackage: string;
   world: string;
   onlyservermodpackage: string;
@@ -14,8 +14,8 @@ export interface LinksConfig {
 }
 
 export const LINKS: LinksConfig = {
-  // wordfile:
-  //   '',
+  wordfile:
+    '',
   fullmodpackage:
     'https://drive.google.com/file/d/1w7ttAkFlEp39gu9IaxAZrSfVcOfIkusl/view?usp=sharing',
   world:
