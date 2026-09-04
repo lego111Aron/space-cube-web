@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'kockulosroom202526tel',
     loadChildren: () =>
       import('./kockulosroom202526tel/kockulosroom202526tel.module').then(m => m.Kockulosroom202526telModule)
+  },
+  {
+    path: 'kockulosroom2026nyar',
+    loadChildren: () =>
+      import('./kockulosroom2026nyar/kockulosroom2026nyar.module').then(m => m.Kockulosroom2026nyarModule)
   }
 ];
 

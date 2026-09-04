@@ -15,6 +15,10 @@
       <p class="markdown-text">{{ 'evolutionsimulator.sec1_intro' | t }}</p>
 
       <h3 class="markdown-h3">{{ 'evolutionsimulator.sec1_startup_title' | t }}</h3>
+      <blockquote class="markdown-quote">
+        <p [innerHTML]="'evolutionsimulator.sec1_startup_note' | t"></p>
+      </blockquote>
+      
       <p class="markdown-text" [innerHTML]="'evolutionsimulator.sec1_startup_win_title' | t"></p>
       <ol class="markdown-list">
         <li [innerHTML]="'evolutionsimulator.sec1_startup_win_1' | t"></li>
@@ -48,7 +52,17 @@
       <ol class="markdown-list">
         <li [innerHTML]="'evolutionsimulator.sec2_startup_1' | t"></li>
         <li [innerHTML]="'evolutionsimulator.sec2_startup_2' | t"></li>
+        <pre class="markdown-code"><code>python -m venv venv
+
+# Windows esetén / On Windows:
+venv\Scripts\activate
+# Linux / macOS esetén / On Linux / macOS:
+source venv/bin/activate
+
+# Függőségek telepítése / Install dependencies:
+pip install -r requirements.txt</code></pre>
         <li [innerHTML]="'evolutionsimulator.sec2_startup_3' | t"></li>
+        <li [innerHTML]="'evolutionsimulator.sec2_startup_4' | t"></li>
         <pre class="markdown-code"><code>python run.py</code></pre>
       </ol>
 

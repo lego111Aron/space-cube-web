@@ -280,9 +280,15 @@ html, body {
 }
 
 .header-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.login-btn,
+.lang-btn {
+  pointer-events: auto;
 }
 
 .login-btn {

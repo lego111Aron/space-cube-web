@@ -1,0 +1,315 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    <aside class="server-profile">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="server-icon">
+            <img src="media\space-cube_icon.png" style="width: 100px; height: 100px;" alt="Server Icon">
+          </div>
+          <h1 class="server-name">{{ 'server.name' | t }}</h1>
+          <p class="server-season">{{ 'server.season' | t }}</p>
+        </div>
+
+        <div class="launch-badge">
+          <div class="badge-content">
+            <span class="badge-label">{{ 'close.label' | t }}</span>
+            <span class="badge-date">{{ 'close.date' | t }}</span>
+          </div>
+        </div>
+
+        <div class="server-connection">
+          <label>{{ 'server.connection.label' | t }}</label>
+          <div class="server-address" [title]="'copy.tooltip' | t" (click)="copyToClipboard()" [class.copied]="isCopied">
+            <code class="no-select">{{ serverAddress }}</code>
+            <span class="copy-feedback" *ngIf="isCopied">{{ 'copy.copied' | t }}</span>
+          </div>
+        </div>
+
+        <div class="profile-section">
+          <div class="section-header-wrapper">
+            <h3 class="section-header">{{ 'technical.title' | t }}</h3>
+            <button class="toggle-specs-btn" (click)="toggleTechnicalSpecs()" [class.open]="isTechnicalSpecsOpen">
+              <span class="toggle-icon">{{ isTechnicalSpecsOpen ? '▲' : '▼' }}</span>
+            </button>
+          </div>
+          <div class="specs-list" [class.open]="isTechnicalSpecsOpen">
+            <div class="spec-item">
+              <span class="spec-label">{{ 'launch.label' | t }}</span>
+              <span class="spec-value">{{ 'launch.date' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.version.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.version.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.modloader.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.modloader.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.maxPlayers.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.maxPlayers.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.worldType.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.worldType.value' | t }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{{ 'specs.javaVersion.label' | t }}</span>
+              <span class="spec-value">{{ 'specs.javaVersion.value' | t }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section support-section">
+          <h3 class="section-header">{{ 'support.title' | t }}</h3> <br>
+          <p class="support-text">
+            <span [innerHTML]="'support.text' | t"></span>
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content-feed">
+      
+      <div class="important-notice">
+        <div class="notice-content">
+          <span class="notice-icon">⚠️</span>
+          <p>{{ 'notice.text' | t }}</p>
+        </div>
+      </div>
+
+      <div class="feed-section">
+        
+        <div class="requirement-box">
+          <h3>{{ 'downloads.title' | t }}</h3>
+          <!-- <p>{{ 'downloads.desc' | t }}</p> -->
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'downloads.full.title.1' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.fullmodpackage" class="download-btn" target="_blank" rel="noopener noreferrer">{{ 'downloads.full.action' | t }}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'downloads.full.title.2' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.world" class="download-btn" target="_blank" rel="noopener noreferrer">{{ 'downloads.full.action' | t }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 
+      <div class="important-notice">
+        <div class="notice-content">
+          <span class="notice-icon">⚠️</span>
+          <p>{{ 'notice.text' | t }}</p>
+        </div>
+      </div>
+
+      <div class="feed-section">
+        <div class="requirement-box">
+          <h3>{{ 'downloads.title' | t }}</h3>
+          <p>{{ 'downloads.desc' | t }}</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'downloads.full.title' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.fullmodpackage" class="download-btn" target="_blank" rel="noopener noreferrer">{{ 'downloads.full.action' | t }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feed-section">
+        <div class="requirement-box">
+          <h3>{{ 'prism.title' | t }}</h3>
+          <p>{{ 'prism.desc' | t }}</p>
+
+          <div class="download-grid">
+            <div class="download-card">
+              <h4>{{ 'prism.original.title' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.prismOriginalWindows" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🪟</span> {{ 'platform.windows' | t }}
+                </a>
+                <a [href]="links.prismOriginalLinux" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🐧</span> {{ 'platform.linux' | t }}
+                </a>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h4>{{ 'prism.cracked.title' | t }}</h4>
+              <div class="download-links">
+                <a [href]="links.prismCrackedWindows" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🪟</span> {{ 'platform.windows' | t }}
+                </a>
+                <a [href]="links.prismCrackedLinux" class="download-btn" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">🐧</span> {{ 'platform.linux' | t }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feed-section">
+        <h2 class="feed-title">{{ 'guide.title' | t }}</h2>
+
+        <div class="guide-steps">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step1.title' | t }}</h4>
+              <p>{{ 'guide.step1.desc' | t }}</p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step2.title' | t }}</h4>
+              <p>{{ 'guide.step2.desc' | t }}</p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_1.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_1.png" alt="2. step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">3/a</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step3a.title' | t }}</h4>
+              <p>{{ 'guide.step3a.desc' | t }}</p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_2b.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_2b.png" alt="3a step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">3/b</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step3b.title' | t }}</h4>
+              <p [innerHTML]="('guide.step3b.desc' | t)"></p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_2a.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_2a.png" alt="3b step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item" id="step-5">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step4.title' | t }}</h4>
+              <p [innerHTML]="('guide.step4.desc' | t)"></p> <br><b>{{ 'common.important' | t }}</b>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_3.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_3.png" alt="4 step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step5.title' | t }}</h4>
+              <p [innerHTML]="('guide.step5.desc' | t)"></p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_4.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_4.png" alt="5 step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step6.title' | t }}</h4>
+              <p>{{ 'guide.step6.desc' | t }}</p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_5.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_5.png" alt="6 step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">7</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step7.title' | t }}</h4>
+              <p>{{ 'guide.step7.desc1' | t }}</p> <br><b>{{ 'guide.step7.desc2' | t }}</b> <br><br>
+              <p [innerHTML]="('guide.step7.desc3' | t)"></p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_6.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_6.png" alt="7 step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+          <hr>
+
+          <div class="step-item">
+            <div class="step-number">8</div>
+            <div class="step-content">
+              <h4>{{ 'guide.step8.title' | t }}</h4>
+              <p>{{ 'guide.step8.desc' | t }}</p>
+            </div>
+            <div class="step-image-container" (click)="openImage('media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_7.png')">
+              <img src="media/servers/gameservers/minecraftservers/kockulosroom2026nyar/step_7.png" alt="8 step" class="step-img">
+              <div class="zoom-hint"><span class="icon">🔍</span> {{ 'zoom.label' | t }}</div>
+            </div>
+          </div>
+        </div>
+
+        <br><br><br><br>
+        <div>
+          <h2 class="feed-title">{{ 'problems.title' | t }}</h2>
+          <div>
+            <div class="problem-item">
+              <h4>{{ 'problem.unavailable.title' | t }}</h4>
+              <p>{{ 'problem.unavailable.desc' | t }}</p>
+            </div>
+            <div class="problem-item">
+              <h4>{{ 'problem.whitelist.title' | t }}</h4>
+              <p [innerHTML]="('problem.whitelist.desc' | t)"></p>
+            </div>
+            <div class="problem-item">
+              <h4>{{ 'problem.empty.title' | t }}</h4>
+              <p>{{ 'problem.empty.desc' | t }}</p>
+            </div>
+            <div class="problem-item">
+              <h4>{{ 'problem.freeze.title' | t }}</h4>
+              <p>{{ 'problem.freeze.desc' | t }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+       -->
+    </main>
+  </div>
+
+  <div class="image-modal" *ngIf="selectedImage" (click)="closeImage()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="selectedImage" alt="Zoomed image">
+      <button class="close-btn" (click)="closeImage()">×</button>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 export interface LinksConfig {
-  wordfile: string;
+  // wordfile: string;
   fullmodpackage: string;
+  world: string;
   onlyservermodpackage: string;
   prismOriginalWindows: string;
   prismOriginalLinux: string;
@@ -9,29 +10,36 @@ export interface LinksConfig {
   javaWindows: string;
   modsPackage: string;
   serverDomain: string;
+  discordInvite: string;
 }
 
 export const LINKS: LinksConfig = {
-  wordfile:
-    'https://drive.google.com/file/d/1MtTy7RQyHtUH9KFT7tLlSLr5-Y1rGCQp/view?usp=sharing',
+  // wordfile:
+  //   '',
   fullmodpackage:
-    'https://drive.google.com/file/d/1tZNl-ihP4WAGIJhbKIl9sQpTO7kut9gS/view?usp=sharing',
+    'https://drive.google.com/file/d/1w7ttAkFlEp39gu9IaxAZrSfVcOfIkusl/view?usp=sharing',
+  world:
+    'https://drive.google.com/file/d/1ayfd1AJA6aqez9ClcPFcXjQb7ktKtYxa/view?usp=sharing',
   onlyservermodpackage:
-    'https://drive.google.com/file/d/1foCI6rRgHQmG_qveaPyody5hwHR3qZO1/view?usp=sharing',
+    '',
   prismOriginalWindows:
-    'https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Windows-MSVC-Setup-9.4.exe',
+    'https://github.com/PrismLauncher/PrismLauncher/releases/download/11.0.3/PrismLauncher-Windows-MSVC-Setup-11.0.3.exe',
   prismOriginalLinux:
-    'https://github.com/PrismLauncher/PrismLauncher/releases/download/9.4/PrismLauncher-Linux-x86_64.AppImage',
+    'https://prismlauncher.org/download/linux/',
   prismCrackedWindows:
-    'https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/9.4/PrismLauncher-Windows-MinGW-w64-Setup-9.4.exe',
+    'https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/11.0.3/PrismLauncher-Windows-MinGW-w64-Setup-11.0.3.exe',
   prismCrackedLinux:
-    'https://github.com/Diegiwg/PrismLauncher-Cracked/releases/download/9.4/PrismLauncher-Linux-x86_64.AppImage',
+    'https://github.com/Diegiwg/PrismLauncher-Cracked/releases/tag/11.0.3',
 
   javaWindows:
-    'https://download.oracle.com/java/21/archive/jdk-21.0.8_windows-x64_bin.exe',
+    '',
 
   modsPackage:
-    'https://drive.google.com/file/d/1Ytb-IEYCOTkbgrbLn0yMB0Rqzc2MtQep/view?usp=sharing',
+    '',
+  
+  discordInvite:
+    'https://discord.gg/V2xV2Fc2w',
 
   serverDomain: 'mc.space-cube.eu',
+
 };

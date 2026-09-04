@@ -39,11 +39,11 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      // Hide header on specific routes like 'kockulosroom202526tel'
-      // Adjust the check based on your actual route path
-      this.showLangSelector = !event.url.includes('kockulosroom202526tel');
+      // Keep the language selector available on the server pages that support localization.
+      this.showLangSelector = true;
       // Hide login button on specific routes
       this.showLoginButton = !event.url.includes('kockulosroom202526tel') && 
+                             !event.url.includes('kockulosroom2026nyar') &&
                              !event.url.includes('teamspeak') && 
                              !event.url.includes('evolutionsimulator');
     });

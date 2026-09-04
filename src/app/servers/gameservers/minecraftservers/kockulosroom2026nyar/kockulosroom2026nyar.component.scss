@@ -1,0 +1,86 @@
+.server-icon-placeholder,
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+}
+
+.page-container {
+  padding-left: clamp(1rem, 2vw, 2rem);
+  padding-right: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+}
+
+/* Kétoszlopos Layout beállítása */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 450px 1fr; /* Bal oszlop fix 450px, jobb oszlop kitölti a maradékot */
+  gap: 2rem; /* Oszlopok közötti távolság */
+  max-width: min(1800px, 100%);
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Bal oldali sáv */
+.server-profile {
+  width: 100%;
+  position: sticky;
+  top: 2rem; /* Görgetésnél fixen felül marad, ha szükséges */
+}
+
+/* Jobb oldali tartalomfolyam */
+.content-feed {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0; /* Törölve a középre igazító auto margin */
+}
+
+.feed-section {
+  width: 100%;
+}
+
+.feed-section a,
+.feed-section a:visited {
+  color: var(--brand-primary);
+  text-decoration-color: rgba(var(--brand-primary-rgb), 0.65);
+}
+
+.feed-section a:hover {
+  color: var(--brand-hover);
+  text-decoration-color: var(--brand-hover);
+}
+
+.discord-pointer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.08rem 0.42rem;
+  margin: 0 0.1rem;
+  border-radius: 0.35rem;
+  background: rgba(88, 101, 242, 0.18);
+  border: 1px solid rgba(88, 101, 242, 0.34);
+  color: #8ea1ff;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: baseline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.discord-pointer:hover {
+  background: rgba(88, 101, 242, 0.26);
+  border-color: rgba(88, 101, 242, 0.48);
+  color: #b4beff;
+}
+
+/* Mobil nézet: kisebb kijelzőkön egymás alá rendezi őket */
+@media (max-width: 900px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .server-profile {
+    position: static;
+  }
+}
